@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yusido.mall</groupId>
+    <artifactId>parent-spring-boot-starter</artifactId>
+    <version>V1.0.0</version>
+    <modules>
+        <module>core-spring-boot-starter</module>
+        <module>app-spring-boot-starter</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>yusido-maven-repo</id>
+            <url>file:/Users/tangaopan/Documents/maven-repo/</url>
+        </repository>
+    </distributionManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Cairo-SR7</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <!--<version>3.7.0</version>-->
+                <configuration>
+                    <!--源码-->
+                    <source>1.8</source>
+                    <!--编译-->
+                    <target>1.8</target>
+                    <!--编码-->
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
